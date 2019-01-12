@@ -3,25 +3,17 @@ package birenzi.dev.springbootmongodb.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document (collection = "Role")
-public class Role {
-    private String role;
+@Document (collection = "TaskStatus")
+public class TaskStatus {
     @Id
     private String id;
+    private String status;
     private String description;
 
-    public Role(String role, String id, String description) {
-        this.role = role;
+    public TaskStatus(String id, String status, String description) {
         this.id = id;
+        this.status = status;
         this.description = description;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String getId() {
@@ -30,6 +22,14 @@ public class Role {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDescription() {

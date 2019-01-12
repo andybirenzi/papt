@@ -3,25 +3,20 @@ package birenzi.dev.springbootmongodb.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document (collection = "Role")
-public class Role {
-    private String role;
+import java.util.Date;
+@Document (collection = "SignCategory")
+public class SignCategory {
     @Id
     private String id;
+    private String name;
     private String description;
+    private Date createdOn;
 
-    public Role(String role, String id, String description) {
-        this.role = role;
+    public SignCategory(String id, String name, String description, Date createdOn) {
         this.id = id;
+        this.name = name;
         this.description = description;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
+        this.createdOn = createdOn;
     }
 
     public String getId() {
@@ -32,11 +27,27 @@ public class Role {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
 }

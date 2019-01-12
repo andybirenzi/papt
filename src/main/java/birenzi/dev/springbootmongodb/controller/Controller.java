@@ -16,6 +16,9 @@ import java.util.List;
 
 @RestController
 public class Controller {
+
+    /*  Break this controller into multiple controllers*/
+
     @Autowired
     private BoardRepo boardRepo;
     @Autowired

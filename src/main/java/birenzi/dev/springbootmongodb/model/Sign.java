@@ -10,7 +10,7 @@ public class Sign {
     @Id
     private String id;
     private String name;
-    private String Description;
+    private String description;
     private Date activeDate;
     private Date removeDate;
     private User installedBy;
@@ -18,6 +18,30 @@ public class Sign {
     private boolean active;
     private String image;
     private User lastUpdatedBy;
+    private SignCategory category;
+
+    public Sign(String id, String name, String description, Date activeDate, Date removeDate, User installedBy, User removedBy, boolean active, String image, User lastUpdatedBy, SignCategory category) {
+
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.activeDate = activeDate;
+        this.removeDate = removeDate;
+        this.installedBy = installedBy;
+        this.removedBy = removedBy;
+        this.active = active;
+        this.image = image;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.category = category;
+    }
+
+    public SignCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(SignCategory category) {
+        this.category = category;
+    }
 
     public String getId() {
         return id;
@@ -36,11 +60,11 @@ public class Sign {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public Date getActiveDate() {

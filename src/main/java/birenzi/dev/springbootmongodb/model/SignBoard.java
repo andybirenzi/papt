@@ -15,11 +15,23 @@ public class SignBoard {
     private String number;
     private long longitude;
     private long latitude;
+    private String dimensions;
     private String description;
     private Date installedOn;
     private User installedBy;
     private Location location;
 
+    public SignBoard(String id, String number, long longitude, long latitude, String dimensions, String description, Date installedOn, User installedBy, Location location) {
+        this.id = id;
+        this.number = number;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.dimensions = dimensions;
+        this.description = description;
+        this.installedOn = installedOn;
+        this.installedBy = installedBy;
+        this.location = location;
+    }
 
     public String getId() {
         return id;

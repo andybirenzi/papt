@@ -18,6 +18,17 @@ public class User {
     private String cellPhoneNumber;
 
 
+    public User(String id, String firstName, String lastName, String middleName, String password, String userName, String email, String cellPhoneNumber, List<Role> roles) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.password = password;
+        this.userName = userName;
+        this.email = email;
+        this.cellPhoneNumber = cellPhoneNumber;
+        this.roles = roles;
+    }
 
     private List<Role> roles;
 
