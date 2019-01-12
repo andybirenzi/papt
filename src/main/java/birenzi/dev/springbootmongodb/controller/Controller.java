@@ -54,21 +54,22 @@ public class Controller {
         return signRepo.insert(sign);
     }
 
-//    // delete
-//    @DeleteMapping("/deleteUser/{username}")
-//    public User deleteOneUser(@PathVariable("username") String userName){
-//      User user=  userRepo.findOne(userName);
-//        return user;
-//
-//    }
-//    @PostMapping("/addBoard")
-//    public SignBoard postOneUser(@RequestBody SignBoard signBoard){
-//        return boardRepo.insert(signBoard);
-//    }
-//    @PostMapping("/addSign")
-//    public Sign postOneSign(@RequestBody Sign sign){
-//        return signRepo.insert(sign);
-//    }
+    // delete
+    @DeleteMapping("/deleteUser/{id}")
+    public void deleteOneUser(@PathVariable("id") String id){
+
+           userRepo.deleteById(id);
+
+
+    }
+    @DeleteMapping("/deleteBoard/{id}")
+    public void deleteOneBoard(@PathVariable("id") String id){
+        boardRepo.deleteById(id);
+    }
+    @DeleteMapping("/deleteSign/{id}")
+    public void deleteOneSign(@PathVariable("id") String id){
+        signRepo.deleteById(id);
+    }
 
 
 }
