@@ -20,8 +20,8 @@ public class UserController {
     private UserRepo userRepo;
 
     /*  Get*/
-    @GetMapping("/getAllSignBoards")
-    public List<User> getAll(){
+    @GetMapping("/getAllUsers")
+    public List<User> getAllUsers(){
         return userRepo.findAll();
     }
 

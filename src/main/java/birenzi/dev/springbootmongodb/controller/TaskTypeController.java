@@ -16,21 +16,21 @@ public class TaskTypeController {
 
 
     /*  Get*/
-    @GetMapping("/getAllSignBoards")
-    public List<TaskType> getAll(){
+    @GetMapping("/getAllTaskTypes")
+    public List<TaskType> getAllTaskTypes(){
         return taskTypeRepo.findAll();
     }
 
     // post
     @PostMapping("/addTaskType")
-    public TaskType postOneUser(@RequestBody TaskType taskType){
+    public TaskType postOneTaskType(@RequestBody TaskType taskType){
         return taskTypeRepo.insert(taskType);
     }
 
 
     // delete
-    @DeleteMapping("/deleteUser/{id}")
-    public void deleteOneUser(@PathVariable("id") String id){
+    @DeleteMapping("/deleteTaskType/{id}")
+    public void deleteOneTaskType(@PathVariable("id") String id){
 
            taskTypeRepo.deleteById(id);
 

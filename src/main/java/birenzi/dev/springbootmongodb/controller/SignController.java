@@ -1,9 +1,6 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.Role;
 import birenzi.dev.springbootmongodb.model.Sign;
-import birenzi.dev.springbootmongodb.model.SignBoard;
-import birenzi.dev.springbootmongodb.model.User;
 import birenzi.dev.springbootmongodb.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-public class SignContoller {
+public class SignController {
 
 
     @Autowired
@@ -20,7 +17,7 @@ public class SignContoller {
 
 
     /*  Get*/
-    @GetMapping("/getAllSignBoards")
+    @GetMapping("/getAllSigns")
     public List<Sign> getAllSigns(){
         return signRepo.findAll();
     }
@@ -33,7 +30,7 @@ public class SignContoller {
     }
 
     // delete
-    @DeleteMapping("/deleteUser/{id}")
+    @DeleteMapping("/deleteSign/{id}")
     public void deleteOneSign(@PathVariable("id") String id){
 
            signRepo.deleteById(id);

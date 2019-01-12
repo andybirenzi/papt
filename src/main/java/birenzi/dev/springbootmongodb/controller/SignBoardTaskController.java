@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-public class SignBoardTaskContoller {
+public class SignBoardTaskController {
 
     /*  Break this controller into multiple controllers*/
 

@@ -9,16 +9,14 @@ import java.util.List;
 
 
 @RestController
-public class SignBoardContoller {
-
-    /*  Break this controller into multiple controllers*/
+public class SignBoardController {
 
     @Autowired
     private BoardRepo boardRepo;
 
     /*  Get*/
     @GetMapping("/getAllSignBoards")
-    public List<SignBoard> getAll(){
+    public List<SignBoard> getAllSignBoards(){
         return boardRepo.findAll();
     }
 
@@ -31,8 +29,8 @@ public class SignBoardContoller {
     }
 
     // delete
-    @DeleteMapping("/deleteUser/{id}")
-    public void deleteOneUser(@PathVariable("id") String id){
+    @DeleteMapping("/deleteSignBoard/{id}")
+    public void deleteOneSignBoard(@PathVariable("id") String id){
 
            boardRepo.deleteById(id);
 

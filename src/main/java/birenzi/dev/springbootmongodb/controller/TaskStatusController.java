@@ -16,21 +16,21 @@ public class TaskStatusController {
     private TaskStatusRepo taskStatusRepo;
 
     /*  Get*/
-    @GetMapping("/getAllSignBoards")
+    @GetMapping("/getAllTaskStatuses")
     public List<TaskStatus> getAllTaskStatus(){
         return taskStatusRepo.findAll();
     }
 
     // post
-    @PostMapping("/addUser")
+    @PostMapping("/addTaskStatus")
     public TaskStatus postOneTaskStatus(@RequestBody TaskStatus status){
         return taskStatusRepo.insert(status);
     }
 
     // delete
 
-    @DeleteMapping("/deleteBoard/{id}")
-    public void deleteOneBoard(@PathVariable("id") String id){
+    @DeleteMapping("/deleteTaskStatus/{id}")
+    public void deleteOneTaskStatus(@PathVariable("id") String id){
         taskStatusRepo.deleteById(id);
     }
 
