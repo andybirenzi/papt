@@ -21,6 +21,21 @@ public class SignBoard {
     private User installedBy;
     private Location location;
 
+    public SignBoard() {
+
+    }
+
+    public SignBoard(String number, long longitude, long latitude, String dimensions, String description, Date installedOn, User installedBy, Location location) {
+        this.number = number;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.dimensions = dimensions;
+        this.description = description;
+        this.installedOn = installedOn;
+        this.installedBy = installedBy;
+        this.location = location;
+    }
+
     public SignBoard(String id, String number, long longitude, long latitude, String dimensions, String description, Date installedOn, User installedBy, Location location) {
         this.id = id;
         this.number = number;

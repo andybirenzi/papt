@@ -20,6 +20,23 @@ public class Sign {
     private User lastUpdatedBy;
     private SignCategory category;
 
+    public Sign() {
+
+    }
+
+    public Sign(String name, String description, Date activeDate, Date removeDate, User installedBy, User removedBy, boolean active, String image, User lastUpdatedBy, SignCategory category) {
+        this.name = name;
+        this.description = description;
+        this.activeDate = activeDate;
+        this.removeDate = removeDate;
+        this.installedBy = installedBy;
+        this.removedBy = removedBy;
+        this.active = active;
+        this.image = image;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.category = category;
+    }
+
     public Sign(String id, String name, String description, Date activeDate, Date removeDate, User installedBy, User removedBy, boolean active, String image, User lastUpdatedBy, SignCategory category) {
 
         this.id = id;

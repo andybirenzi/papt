@@ -17,6 +17,20 @@ public class User {
     private String email;
     private String cellPhoneNumber;
 
+    public User() {
+
+    }
+
+    public User(String firstName, String lastName, String middleName, String password, String userName, String email, String cellPhoneNumber, List<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.password = password;
+        this.userName = userName;
+        this.email = email;
+        this.cellPhoneNumber = cellPhoneNumber;
+        this.roles = roles;
+    }
 
     public User(String id, String firstName, String lastName, String middleName, String password, String userName, String email, String cellPhoneNumber, List<Role> roles) {
         this.id = id;

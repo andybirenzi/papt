@@ -10,6 +10,15 @@ public class TaskStatus {
     private String status;
     private String description;
 
+    public TaskStatus() {
+
+    }
+
+    public TaskStatus(String status, String description) {
+        this.status = status;
+        this.description = description;
+    }
+
     public TaskStatus(String id, String status, String description) {
         this.id = id;
         this.status = status;

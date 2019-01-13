@@ -20,6 +20,22 @@ public class SignBoardTasks {
     private List<SignBoard> assignedBoards;
     private List<User> assignedUsers;
 
+    public SignBoardTasks() {
+
+    }
+
+    public SignBoardTasks(String taskName, String taskDescription, TaskType taskType, TaskStatus taskStatus, Date startDate, Date endDate, List<Sign> assignedAds, List<SignBoard> assignedBoards, List<User> assignedUsers) {
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskType = taskType;
+        this.taskStatus = taskStatus;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.assignedAds = assignedAds;
+        this.assignedBoards = assignedBoards;
+        this.assignedUsers = assignedUsers;
+    }
+
     public SignBoardTasks(String id, String taskName, String taskDescription, TaskType taskType, TaskStatus taskStatus, Date startDate, Date endDate, List<Sign> assignedAds, List<SignBoard> assignedBoards, List<User> assignedUsers) {
         this.id = id;
         this.taskName = taskName;

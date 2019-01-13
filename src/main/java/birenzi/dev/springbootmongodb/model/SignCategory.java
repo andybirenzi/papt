@@ -12,6 +12,16 @@ public class SignCategory {
     private String description;
     private Date createdOn;
 
+    public SignCategory() {
+
+    }
+
+    public SignCategory(String name, String description, Date createdOn) {
+        this.name = name;
+        this.description = description;
+        this.createdOn = createdOn;
+    }
+
     public SignCategory(String id, String name, String description, Date createdOn) {
         this.id = id;
         this.name = name;

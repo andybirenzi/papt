@@ -13,6 +13,15 @@ public class TaskType {
     private String description;
     private Date createdOn;
 
+    public TaskType() {
+
+    }
+
+    public TaskType(String name, String description, Date createdOn) {
+        this.name = name;
+        this.description = description;
+        this.createdOn = createdOn;
+    }
 
     public TaskType(String id, String name, String description, Date createdOn) {
         this.id = id;

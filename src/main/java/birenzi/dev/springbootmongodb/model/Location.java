@@ -12,6 +12,17 @@ public class Location {
     private String city;
     private String country;
 
+    public Location() {
+
+    }
+
+    public Location(String address1, String address2, String city, String country) {
+        this.address1 = address1;
+        this.address2 = address2;
+        this.city = city;
+        this.country = country;
+    }
+
     public Location(String id, String address1, String address2, String city, String country) {
         this.id = id;
         this.address1 = address1;
