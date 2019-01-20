@@ -1,11 +1,16 @@
 package birenzi.dev.springbootmongodb.modelLayer.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Document (collection = "User")
 public class User {
     @Id
@@ -31,19 +36,5 @@ public class User {
         this.cellPhoneNumber = cellPhoneNumber;
         this.roles = roles;
     }
-
-    public User(String id, String firstName, String lastName, String middleName, String password, String userName, String email, String cellPhoneNumber, List<Role> roles) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.password = password;
-        this.userName = userName;
-        this.email = email;
-        this.cellPhoneNumber = cellPhoneNumber;
-        this.roles = roles;
-    }
-
-
 
 }
