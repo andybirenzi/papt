@@ -1,11 +1,8 @@
-package birenzi.dev.springbootmongodb.repository;
+package birenzi.dev.springbootmongodb.modelLayer.repository;
 
-import birenzi.dev.springbootmongodb.model.User;
+import birenzi.dev.springbootmongodb.modelLayer.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 @Repository
 public interface UserRepo extends MongoRepository<User,String> {

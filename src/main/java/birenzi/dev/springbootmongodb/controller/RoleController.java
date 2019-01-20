@@ -1,10 +1,7 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.Role;
-import birenzi.dev.springbootmongodb.model.Sign;
-import birenzi.dev.springbootmongodb.model.SignBoard;
-import birenzi.dev.springbootmongodb.model.User;
-import birenzi.dev.springbootmongodb.repository.*;
+import birenzi.dev.springbootmongodb.modelLayer.model.Role;
+import birenzi.dev.springbootmongodb.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,28 +13,25 @@ public class RoleController {
 
 
     @Autowired
-    private RoleRepo roleRepo;
+    private RoleService RoleService;
 
 
     /*  Get*/
     @GetMapping("/getAllRoles")
     public List<Role> getAllRoles(){
-        return roleRepo.findAll();
+        return RoleService.getAllRoles();
     }
 
     // post
     @PostMapping("/addRole")
     public Role addOneUser(@RequestBody Role role){
-        return roleRepo.insert(role);
+        return RoleService.addOneRole(role);
     }
 
     // delete
     @DeleteMapping("/deleteRole/{id}")
     public void deleteOneRole(@PathVariable("id") String id){
-
-           roleRepo.deleteById(id);
-
-
+        RoleService.deleteOneRole(id);
     }
 
 

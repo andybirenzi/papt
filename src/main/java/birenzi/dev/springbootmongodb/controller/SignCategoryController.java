@@ -1,7 +1,7 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.*;
-import birenzi.dev.springbootmongodb.repository.*;
+import birenzi.dev.springbootmongodb.modelLayer.model.SignCategory;
+import birenzi.dev.springbootmongodb.service.SignCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,25 +14,25 @@ public class SignCategoryController {
     /*  Break this controller into multiple controllers*/
 
     @Autowired
-    private SignCategoryRepo signCategoryRepo;
+    private SignCategoryService signCategoryService;
 
     /*  Get*/
     @GetMapping("/getAllSignCategory")
     public List<SignCategory> getAll(){
-        return signCategoryRepo.findAll();
+        return signCategoryService.getAll();
     }
 
     // post
     @PostMapping("/addSignCategory")
     public SignCategory postOneUser(@RequestBody SignCategory category){
-        return signCategoryRepo.insert(category);
+        return signCategoryService.postOneUser(category);
     }
 
     // delete
 
     @DeleteMapping("/deleteSignCategory/{id}")
     public void deleteOneSignCategory(@PathVariable("id") String id){
-        signCategoryRepo.deleteById(id);
+        signCategoryService.deleteOneSignCategory(id);
     }
 
 

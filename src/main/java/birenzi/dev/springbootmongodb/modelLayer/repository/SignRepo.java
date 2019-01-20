@@ -1,6 +1,6 @@
-package birenzi.dev.springbootmongodb.repository;
+package birenzi.dev.springbootmongodb.modelLayer.repository;
 
-import birenzi.dev.springbootmongodb.model.Sign;
+import birenzi.dev.springbootmongodb.modelLayer.model.Sign;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

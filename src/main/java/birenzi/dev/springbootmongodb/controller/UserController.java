@@ -1,13 +1,8 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.Role;
-import birenzi.dev.springbootmongodb.model.Sign;
-import birenzi.dev.springbootmongodb.model.SignBoard;
-import birenzi.dev.springbootmongodb.model.User;
-import birenzi.dev.springbootmongodb.repository.*;
+import birenzi.dev.springbootmongodb.modelLayer.model.User;
+import birenzi.dev.springbootmongodb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,25 +12,25 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserRepo userRepo;
+    private UserService userService;
 
     /*  Get*/
     @GetMapping("/getAllUsers")
     public List<User> getAllUsers(){
-        return userRepo.findAll();
+        return userService.getAllUsers();
     }
 
 
     // post
     @PostMapping("/addUser")
     public User postOneUser(@RequestBody User user){
-        return userRepo.insert(user);
+        return userService.postOneUser(user);
     }
 
     // delete
     @DeleteMapping("/deleteUser/{id}")
     public void deleteOneUser(@PathVariable("id") String id){
-           userRepo.deleteById(id);
+           userService.deleteOneUser(id);
 
 
     }
