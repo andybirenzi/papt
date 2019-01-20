@@ -1,23 +1,26 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.SignBoard;
-import birenzi.dev.springbootmongodb.repository.*;
+import birenzi.dev.springbootmongodb.modelLayer.model.SignBoard;
+import birenzi.dev.springbootmongodb.service.SignBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
+/**
+ *
+ */
 @RestController
 public class SignBoardController {
 
     @Autowired
-    private BoardRepo boardRepo;
+    private SignBoardService boardService;
 
     /*  Get*/
     @GetMapping("/getAllSignBoards")
     public List<SignBoard> getAllSignBoards(){
-        return boardRepo.findAll();
+        return boardService.getAllSignBoards();
     }
 
 
@@ -25,16 +28,13 @@ public class SignBoardController {
 
     @PostMapping("/addBoard")
     public SignBoard postOneBoard(@RequestBody SignBoard signBoard){
-        return boardRepo.insert(signBoard);
+        return boardService.postOneBoard(signBoard);
     }
 
     // delete
     @DeleteMapping("/deleteSignBoard/{id}")
     public void deleteOneSignBoard(@PathVariable("id") String id){
-
-           boardRepo.deleteById(id);
-
-
+        boardService.deleteOneSignBoard(id);
     }
 
 

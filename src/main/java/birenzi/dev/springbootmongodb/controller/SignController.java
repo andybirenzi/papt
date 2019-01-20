@@ -1,7 +1,7 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.Sign;
-import birenzi.dev.springbootmongodb.repository.*;
+import birenzi.dev.springbootmongodb.modelLayer.model.Sign;
+import birenzi.dev.springbootmongodb.service.SignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,27 +13,27 @@ public class SignController {
 
 
     @Autowired
-    private SignRepo signRepo;
+    private SignService SignService;
 
 
     /*  Get*/
     @GetMapping("/getAllSigns")
     public List<Sign> getAllSigns(){
-        return signRepo.findAll();
+        return SignService.getAllSigns();
     }
 
 
     // post
     @PostMapping("/addSign")
     public Sign postOneSign(@RequestBody Sign sign){
-        return signRepo.insert(sign);
+        return SignService.postOneSign(sign);
     }
 
     // delete
     @DeleteMapping("/deleteSign/{id}")
     public void deleteOneSign(@PathVariable("id") String id){
 
-           signRepo.deleteById(id);
+           SignService.deleteOneSign(id);
 
 
     }

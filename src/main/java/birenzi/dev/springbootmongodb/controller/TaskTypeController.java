@@ -1,7 +1,7 @@
 package birenzi.dev.springbootmongodb.controller;
 
-import birenzi.dev.springbootmongodb.model.*;
-import birenzi.dev.springbootmongodb.repository.*;
+import birenzi.dev.springbootmongodb.modelLayer.model.TaskType;
+import birenzi.dev.springbootmongodb.service.TaskTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,19 +12,19 @@ import java.util.List;
 public class TaskTypeController {
 
     @Autowired
-    private TaskTypeRepo taskTypeRepo;
+    private TaskTypeService taskTypeService;
 
 
     /*  Get*/
     @GetMapping("/getAllTaskTypes")
     public List<TaskType> getAllTaskTypes(){
-        return taskTypeRepo.findAll();
+        return taskTypeService.getAllTaskTypes();
     }
 
     // post
     @PostMapping("/addTaskType")
     public TaskType postOneTaskType(@RequestBody TaskType taskType){
-        return taskTypeRepo.insert(taskType);
+        return taskTypeService.postOneTaskType(taskType);
     }
 
 
@@ -32,7 +32,7 @@ public class TaskTypeController {
     @DeleteMapping("/deleteTaskType/{id}")
     public void deleteOneTaskType(@PathVariable("id") String id){
 
-           taskTypeRepo.deleteById(id);
+           taskTypeService.deleteOneTaskType(id);
 
 
     }
